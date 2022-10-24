@@ -1,0 +1,15 @@
+/*
+
+Template: COINEX - Crypto Currency HTML Template 
+Author: iqonicthemes.in
+Version: 1.0
+Design and Developed by: iqonicthemes.in
+
+*/
+.telegramim_button {
+	position: fixed;
+	left: 20px;
+	bottom: 20px;
+	z-index: 1001;
+	text-decoration: none;
+	background: linear-gradient(to right, #20bfe1 0%, #017bfd 100%) !important;}
