@@ -1,0 +1,67 @@
+{% extends "layouts/home.html" %}<!---->
+{% block title %} Referals {% endblock title %}<!---->
+{% block content %}
+
+<!-- Page Title -->
+<section
+  class="page-title"
+  style="background-image: url(/assets/home/images/background/3.jpg)"
+>
+  <div class="auto-container">
+    <h1>ACCOUNT DASHBOARD</h1>
+    <ul class="page-breadcrumb">
+      <li><a href="?a=home">home</a></li>
+    </ul>
+  </div>
+</section>
+<!-- End Page Title -->
+
+<!-- Sidebar Page Container -->
+<div class="sidebar-page-container">
+  <div class="auto-container">
+    <div class="row clearfix">
+      <!-- Sidebar Side -->
+      {% include "components/dashboardsidebar.html" %}
+
+      <!-- Content Side -->
+      <div class="content-side col-lg-9 col-md-12 col-sm-12">
+        <!-- News Detail -->
+        <div class="news-detail">
+          <div class="blog-author-box">
+            <h3>Your Referrals</h3>
+            <br />
+            <div class="styled-form">
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-sm blog-author-box">
+                    <br />
+                    <table
+                      class="table table-striped table-bordered"
+                      cellspacing="1"
+                      cellpadding="1"
+                    >
+                      <tr>
+                        <td class="item">Referrals:</td>
+                        <td class="item">0</td>
+                      </tr>
+                      <tr>
+                        <td class="item">Active referrals:</td>
+                        <td class="item">0</td>
+                      </tr>
+                      <tr>
+                        <td class="item">Total referral commission:</td>
+                        <td class="item">$0.00</td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+                <br />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}

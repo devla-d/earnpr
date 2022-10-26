@@ -11,3 +11,11 @@ def about(request):
 
 def faq(request):
     return render(request, "home/faq.html")
+
+
+def news(request):
+    return render(request, "home/news.html")
+
+
+def support(request):
+    return render(request, "home/support.html")

@@ -1,0 +1,51 @@
+{% extends "layouts/home.html" %}<!---->
+{% block title %} {{domain}} | A unique real estate strategy, your welfare and
+financial freedom is guaranteed {% endblock title %} {% block content %}
+
+<!-- Page Title -->
+<section
+  class="page-title"
+  style="background-image: url(/assets/home/images/background/3.jpg)"
+>
+  <div class="auto-container">
+    <h1>News</h1>
+    <ul class="page-breadcrumb">
+      <li><a href="/">home</a></li>
+      <li>News</li>
+      <li>News</li>
+    </ul>
+  </div>
+</section>
+<!-- End Page Title -->
+
+<!-- About Section -->
+<section class="about-section">
+  <div
+    class="pattern-layer"
+    style="background-image: url(/assets/home/images/background/pattern-1.png)"
+  ></div>
+  <div class="auto-container">
+    <h3>News</h3>
+    <br />
+
+    <table cellspacing="1" cellpadding="2" border="0" width="100%">
+      <tr>
+        <td colspan="3" align="center">No news found</td>
+      </tr>
+    </table>
+
+    <center>
+      <ul class="pagination">
+        <li class="page-item">
+          <a class="prev page-link disabled">&lt;&lt;</a>
+        </li>
+        <li class="page-item active"><a class="page-link">1</a></li>
+        <li class="page-item">
+          <a class="next page-link disabled">&gt;&gt;</a>
+        </li>
+      </ul>
+    </center>
+  </div>
+</section>
+
+{% endblock content %}

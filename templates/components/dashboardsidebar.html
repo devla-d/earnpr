@@ -1,0 +1,24 @@
+<div class="sidebar-side col-lg-3 col-md-12 col-sm-12">
+  <aside class="sidebar sticky-top">
+    <!-- Search -->
+
+    <!-- Categories Widget -->
+    <div class="sidebar-widget categories-box">
+      <div class="widget-content">
+        <div class="sidebar-title">
+          <h5>Member panel</h5>
+        </div>
+        <ul class="category-list">
+          <li><a href="{% url 'dashbaord' %}">Account</a></li>
+
+          <li><a href="{% url 'history' %}">History</a></li>
+          <li><a href="{% url 'withdraw' %}">Withdraw</a></li>
+          <li><a href="{% url 'referals' %}">My Referral</a></li>
+          <!--	<li><a href="?a=referallinks">Banners</a></li>-->
+          <li><a href="{% url 'settings' %}">Edit Account</a></li>
+          <li><a href="?a=logout">Logout</a></li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+</div>

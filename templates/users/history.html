@@ -1,0 +1,74 @@
+{% extends "layouts/home.html" %}<!---->
+{% block title %} Transaction history {% endblock title %}<!---->
+{% block content %}
+
+<!-- Page Title -->
+<section
+  class="page-title"
+  style="background-image: url(/assets/home/images/background/3.jpg)"
+>
+  <div class="auto-container">
+    <h1>ACCOUNT DASHBOARD</h1>
+    <ul class="page-breadcrumb">
+      <li><a href="?a=home">home</a></li>
+    </ul>
+  </div>
+</section>
+<!-- End Page Title -->
+
+<!-- Sidebar Page Container -->
+<div class="sidebar-page-container">
+  <div class="auto-container">
+    <div class="row clearfix">
+      <!-- Sidebar Side -->
+      {% include "components/dashboardsidebar.html" %}
+
+      <!-- Content Side -->
+      <div class="content-side col-lg-9 col-md-12 col-sm-12">
+        <!-- News Detail -->
+        <div class="news-detail">
+          <div class="blog-author-box">
+            <h3>History</h3>
+            <br />
+            <div class="styled-form">
+              <div class="row">
+                <div class="col-sm blog-author-box">
+                  <table
+                    cellspacing="1"
+                    cellpadding="2"
+                    width="100%"
+                    class="table table-striped table-bordered"
+                  >
+                    <tr>
+                      <th class="inheader"><b>Type</b></th>
+                      <th class="inheader" width="200"><b>Amount</b></th>
+                      <th class="inheader" width="170"><b>Date</b></th>
+                    </tr>
+                    <tr>
+                      <td colspan="3" align="center">No transactions found</td>
+                    </tr>
+                    <tr>
+                      <td colspan="3">&nbsp;</td>
+                    </tr>
+                  </table>
+
+                  <ul class="pagination">
+                    <li class="page-item">
+                      <a class="prev page-link disabled">&lt;&lt;</a>
+                    </li>
+                    <li class="page-item active"><a class="page-link">1</a></li>
+                    <li class="page-item">
+                      <a class="next page-link disabled">&gt;&gt;</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}

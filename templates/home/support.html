@@ -1,0 +1,205 @@
+{% extends "layouts/home.html" %}<!---->
+{% block title %} {{domain}} | A unique real estate strategy, your welfare and
+financial freedom is guaranteed {% endblock title %} {% block content %}
+
+<!-- Page Title -->
+<section
+  class="page-title"
+  style="background-image: url(/assets/home/images/background/3.jpg)"
+>
+  <div class="auto-container">
+    <h1>Contact Us</h1>
+    <ul class="page-breadcrumb">
+      <li><a href="/">home</a></li>
+      <li>Contact Us</li>
+    </ul>
+  </div>
+</section>
+<!-- End Page Title -->
+
+<!-- Contact Page Section -->
+<div
+  class="contact-page-section"
+  style="background-image: url(/assets/home/images/background/pattern-9.png)"
+>
+  <div class="auto-container">
+    <div class="row clearfix">
+      <!-- Contact Info Block -->
+      <div class="contact-info-block col-lg-3 col-md-6 col-sm-12">
+        <div class="inner-box">
+          <div class="color-layer"></div>
+          <div class="icon-box">
+            <span class="icon flaticon-phone-call"></span>
+          </div>
+          <h6>Phone</h6>
+          <ul>
+            <li><span>Phone : </span><a href="">VIP Clients Only</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Contact Info Block -->
+      <div class="contact-info-block col-lg-3 col-md-6 col-sm-12">
+        <div class="inner-box">
+          <div class="color-layer"></div>
+          <div class="icon-box">
+            <span class="icon flaticon-big-envelope"></span>
+          </div>
+          <h6>Contact Us</h6>
+          <ul>
+            <li>
+              <span>Email : </span
+              ><a href="support@{{domain}}">support@{{domain}}</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Contact Info Block -->
+      <div class="contact-info-block col-lg-3 col-md-6 col-sm-12">
+        <div class="inner-box">
+          <div class="color-layer"></div>
+          <div class="icon-box">
+            <span class="icon flaticon-map"></span>
+          </div>
+          <h6>Location</h6>
+          <ul>
+            <li>Suite L Radford Business Centre, Radford Way, Billericay,</li>
+            <li>Essex, United Kingdom, CM12 0BZ.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Contact Info Block -->
+      <div class="contact-info-block col-lg-3 col-md-6 col-sm-12">
+        <div class="inner-box">
+          <div class="color-layer"></div>
+          <div class="icon-box">
+            <span class="icon flaticon-wall-clock"></span>
+          </div>
+          <h6>Opening Hours</h6>
+          <ul>
+            <li>24/7 Professional Service</li>
+            <li>Sunday: Online Services Only</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lower Section -->
+    <div class="lower-section">
+      <div class="row clearfix">
+        <!-- Content Column -->
+        <div class="content-column col-lg-6 col-md-12 col-sm-12">
+          <div class="inner-column">
+            <!-- Sec Title -->
+            <div class="sec-title">
+              <div class="title"></div>
+              <h2>Get In <span>Touch With Us</span></h2>
+            </div>
+          </div>
+          <div class="text"></div>
+          <!-- Social Box -->
+          <ul class="social-box"></ul>
+        </div>
+
+        <!-- Form Column -->
+        <div class="form-column col-lg-6 col-md-12 col-sm-12">
+          <div class="inner-column">
+            <!-- Contact Form -->
+            <div class="contact-page-form">
+              <!-- Contact Form -->
+
+              <script language="javascript">
+                function checkform() {
+                  if (document.mainform.name.value == "") {
+                    alert("Please type your full name!");
+                    document.mainform.name.focus();
+                    return false;
+                  }
+                  if (document.mainform.email.value == "") {
+                    alert("Please enter your e-mail address!");
+                    document.mainform.email.focus();
+                    return false;
+                  }
+                  if (document.mainform.message.value == "") {
+                    alert("Please type your message!");
+                    document.mainform.message.focus();
+                    return false;
+                  }
+                  return true;
+                }
+              </script>
+
+              <form method="post" name="mainform" onsubmit="return checkform()">
+                <input
+                  type="hidden"
+                  name="form_id"
+                  value="16666952601087"
+                /><input
+                  type="hidden"
+                  name="form_token"
+                  value="82f6489b6c99557f1e73737887bbedaf"
+                />
+                <input type="hidden" name="a" value="support" />
+                <input type="hidden" name="action" value="send" />
+
+                <table cellspacing="0" cellpadding="2" border="0">
+                  <div class="row clearfix">
+                    <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                      <span class="icon flaticon-user-2"></span>
+                      <input
+                        type="text"
+                        name="name"
+                        value=""
+                        size="30"
+                        class="inpts"
+                        placeholder="Your Name"
+                      />
+                    </div>
+                    <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                      <span class="icon flaticon-big-envelope"></span>
+                      <input
+                        type="text"
+                        name="email"
+                        value=""
+                        size="30"
+                        class="inpts"
+                        placeholder="Your Email"
+                      />
+                    </div>
+                    <div class="form-group col-lg-12 col-md-12 col-sm-12">
+                      <span class="icon flaticon-user-2"></span>
+                      <textarea
+                        name="message"
+                        class="inpts"
+                        cols="45"
+                        rows="4"
+                        placeholder="Message"
+                      ></textarea>
+                    </div>
+
+                    <div class="form-group col-lg-12 col-md-12 col-sm-12">
+                      <button
+                        class="theme-btn submit-btn"
+                        type="submit"
+                        value="Send"
+                        disabled="disabled"
+                      >
+                        use our live support
+                        <span class="arrow flaticon-right-arrow-1"></span>
+                      </button>
+                    </div>
+                  </div>
+                </table>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Contact Page Section -->
+
+{% endblock content %}

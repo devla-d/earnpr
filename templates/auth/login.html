@@ -1,0 +1,122 @@
+{% extends "layouts/home.html" %}<!---->
+{% block title %} Login into your | {{domain}} {% endblock title %}<!----->
+{% block content %}
+
+<!-- Page Title -->
+<section
+  class="page-title"
+  style="background-image: url(/assets/home/images/background/3.jpg)"
+>
+  <div class="auto-container">
+    <h1>Sign In</h1>
+    <ul class="page-breadcrumb">
+      <li><a href="/">home</a></li>
+      <li>Sign In</li>
+    </ul>
+  </div>
+</section>
+<!-- End Page Title -->
+
+<!-- Login Section -->
+<div class="login-section">
+  <div class="auto-container">
+    <div class="inner-container">
+      <!-- Title Box -->
+      <div class="title-box">
+        <div class="title">login</div>
+        <h2>Login<span> Account</span></h2>
+      </div>
+      <!-- Login Form -->
+      <div class="styled-form">
+        <script language="javascript">
+          function checkform() {
+            if (document.mainform.username.value == "") {
+              alert("Please type your username!");
+              document.mainform.username.focus();
+              return false;
+            }
+            if (document.mainform.password.value == "") {
+              alert("Please type your password!");
+              document.mainform.password.focus();
+              return false;
+            }
+            return true;
+          }
+        </script>
+
+        <form method="post" name="mainform" onsubmit="return checkform()">
+          <input type="hidden" name="form_id" value="16666962204935" /><input
+            type="hidden"
+            name="form_token"
+            value="b258b80419cec88c3c6a7fbc8ce691b6"
+          />
+          <input type="hidden" name="a" value="do_login" />
+          <input type="hidden" name="follow" value="" />
+          <input type="hidden" name="follow_id" value="" />
+          <table cellspacing="0" cellpadding="2" border="0">
+            <div class="form-group">
+              <input
+                type="text"
+                name="username"
+                value=""
+                class="inpts"
+                size="30"
+                autofocus="autofocus"
+                placeholder="Username"
+              />
+            </div>
+            <div class="form-group">
+              <input
+                type="password"
+                name="password"
+                value=""
+                class="inpts"
+                size="30"
+                placeholder="Password"
+              />
+            </div>
+
+            <div class="form-group">
+              <div class="clearfix">
+                <div class="pull-left">
+                  <div class="check-box">
+                    <input
+                      type="checkbox"
+                      name="remember-password"
+                      id="type-1"
+                    />
+                    <label for="type-1">Remember password</label>
+                  </div>
+                </div>
+                <div class="pull-right">
+                  <a href="?a=forgot_password" class="forgot"
+                    >Forget Password?</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group text-center">
+              <button
+                type="submit"
+                class="theme-btn btn-style-three"
+                value="Login"
+              >
+                <span class="txt">Sign In</span>
+              </button>
+            </div>
+
+            <div class="form-group">
+              <div class="users">
+                if you dont have an any account in here?
+                <a href="{% url 'register' %}">Signup</a>
+              </div>
+            </div>
+          </table>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Login Section -->
+{% endblock content %}

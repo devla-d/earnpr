@@ -1,0 +1,192 @@
+{% extends "layouts/home.html" %}<!---->
+{% block title %} Create a {{domain}} account {% endblock title %}<!----->
+{% block content %}
+
+<!-- Page Title -->
+<section
+  class="page-title"
+  style="background-image: url(/assets/home/images/background/3.jpg)"
+>
+  <div class="auto-container">
+    <h1>Register with us</h1>
+    <ul class="page-breadcrumb">
+      <li><a href="/">home</a></li>
+      <li>Sign UP</li>
+    </ul>
+  </div>
+</section>
+<!-- End Page Title -->
+
+<!-- Login Section -->
+<div class="login-section">
+  <div class="auto-container">
+    <div class="inner-container">
+      <!-- Title Box -->
+      <div class="title-box">
+        <div class="title">sign UP</div>
+        <h2>Create Your <span>Account</span></h2>
+      </div>
+
+      <!-- Login Form -->
+      <div class="styled-form style-two">
+        <form method="post" name="regform">
+          <input type="hidden" name="form_id" value="16667124912703" />
+
+          <table cellspacing="0" cellpadding="2" border="0">
+            <center>
+              <div class="col">
+                <div class="title-box">
+                  <div class="title">
+                    <h2>Personal <span>Data</span></h2>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                  <input
+                    type="text"
+                    name="fullname"
+                    value=""
+                    class="inpts"
+                    size="30"
+                    placeholder="Your Full Name"
+                  />
+                </div>
+                <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                  <input
+                    type="text"
+                    name="username"
+                    value=""
+                    class="inpts size=30"
+                    placeholder="Your Username"
+                  />
+                </div>
+                <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                  <input
+                    type="text"
+                    name="email"
+                    value=""
+                    class="inpts size=30"
+                    placeholder="Your E-mail Address"
+                  />
+                </div>
+                <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                  <input
+                    type="text"
+                    name="email1"
+                    value=""
+                    class="inpts size=30"
+                    placeholder="Retype Your E-mail"
+                  />
+                </div>
+                <div class="col">
+                  <div class="title-box">
+                    <div class="title">
+                      <h2>Security <span>Data</span></h2>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                    <input
+                      type="password"
+                      name="password"
+                      value=""
+                      class="inpts size=30"
+                      placeholder="Define Password"
+                    />
+                  </div>
+                  <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                    <input
+                      type="password"
+                      name="password2"
+                      value=""
+                      class="inpts size=30"
+                      placeholder="Retype Password"
+                    />
+                  </div>
+                  <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                    <input
+                      type="text"
+                      name="sq"
+                      value=""
+                      class="inpts size=30"
+                      placeholder="Secret question"
+                    />
+                  </div>
+                  <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                    <input
+                      type="text"
+                      name="sa"
+                      value=""
+                      class="inpts size=30"
+                      placeholder="Secret answer"
+                    />
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="title-box">
+                    <div class="title">
+                      <h2>Payment <span>Data</span></h2>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                    <input
+                      type="text"
+                      class="inpts size=30"
+                      name="pay_account[1000][wallet address]"
+                      value=""
+                      placeholder="Your Bitcoin wallet address"
+                    />
+                  </div>
+                  <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                    <input
+                      type="text"
+                      class="inpts size=30"
+                      name="pay_account[1006][wallet address]"
+                      value=""
+                      placeholder="Your Tether TRC20 wallet address"
+                    />
+                  </div>
+
+                  <div class="form-group col-lg-12 col-md-12 col-sm-12">
+                    <p>Your Upline: N/A (n/a)</p>
+                  </div>
+                </div>
+              </div>
+            </center>
+
+            <div class="form-group text-center col-lg-12 col-md-12 col-sm-12">
+              <input
+                type="checkbox"
+                name="agree"
+                value="1"
+                style="all: revert"
+              />
+              I agree with <a href="?a=rules">Terms and conditions</a><br />
+              <button
+                type="submit"
+                class="theme-btn btn-style-three"
+                value="Register"
+              >
+                <span class="txt">Sign Up</span>
+              </button>
+            </div>
+
+            <div class="form-group col-lg-12 col-md-12 col-sm-12">
+              <div class="users">
+                Already have an account?
+                <a href="{% url 'login' %}">Sign In</a>
+              </div>
+            </div>
+          </table>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- End Login Section -->
+</div>
+{% endblock content %}

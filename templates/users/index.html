@@ -1,0 +1,86 @@
+{% extends "layouts/home.html" %}<!---->
+{% block title %} Your {{domain}} dashboard {% endblock title %}<!---->
+{% block content %}
+
+<!-- Page Title -->
+<section
+  class="page-title"
+  style="background-image: url(/assets/home/images/background/3.jpg)"
+>
+  <div class="auto-container">
+    <h1>ACCOUNT DASHBOARD</h1>
+    <ul class="page-breadcrumb">
+      <li><a href="?a=home">home</a></li>
+    </ul>
+  </div>
+</section>
+<!-- End Page Title -->
+
+<!-- Sidebar Page Container -->
+<div class="sidebar-page-container">
+  <div class="auto-container">
+    <div class="row clearfix">
+      <!-- Sidebar Side -->
+      {% include "components/dashboardsidebar.html" %}
+
+      <!-- Content Side -->
+      <div class="content-side col-lg-9 col-md-12 col-sm-12">
+        <!-- News Detail -->
+        <div class="news-detail">
+          <div class="blog-author-box">
+            <div class="col blog-author-box">
+              <h3>Your account: Last Access -</h3>
+            </div>
+
+            <b><a href="?a=security"></a></b>
+
+            <div class="row">
+              <div class="col-sm blog-author-box" style="height: 150px">
+                <h3>Balance: $<b>1000.00</b></h3>
+                <br />
+                <p style="text-align: center"></p>
+              </div>
+
+              <div class="col-sm blog-author-box" style="height: 150px">
+                <h3>Earned Total: $<b>0.00</b></h3>
+              </div>
+
+              <div class="col-sm blog-author-box" style="height: 150px">
+                <h3>Active Deposit: $<b>0.00</b></h3>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-sm blog-author-box">
+                <h3>User: <br />o0bumbum0o</h3>
+              </div>
+              <div class="col-sm blog-author-box">
+                <h3>Registration Date: <br />Oct-25-2022</h3>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-sm blog-author-box">
+                <h4 style="text-align: center">
+                  Referral Code: <span>o0bumbum0o</span>
+                </h4>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-sm blog-author-box">
+                <h3>Withdrew Total: <br />$<b>0.00</b></h3>
+              </div>
+              <div class="col-sm blog-author-box">
+                <h3>Pending Withdrawal: $<b>0.00</b></h3>
+              </div>
+            </div>
+
+            <br /><br />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}

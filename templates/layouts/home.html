@@ -318,14 +318,14 @@
                     <li><a href="/">HOME</a></li>
                     <li><a href="{% url 'about' %}">ABOUT</a></li>
                     <li><a href="{% url 'faq' %}">FAQ</a></li>
-                    <li><a href="?a=news">NEWS</a></li>
+                    <li><a href="{% url 'news' %}">NEWS</a></li>
                     <!--	<li><a href="?a=banners">BANNERS</a>
 								</li>
 								<li><a href="?a=paidout">PAIDOUT</a>
 								</li>-->
-                    <li><a href="?a=support">SUPPORT</a></li>
-                    <li><a href="?a=login">LOGIN</a></li>
-                    <li><a href="?a=signup">SIGN UP</a></li>
+                    <li><a href="{% url 'support' %}">SUPPORT</a></li>
+                    <li><a href="{% url 'login' %}">LOGIN</a></li>
+                    <li><a href="{% url 'register' %}">SIGN UP</a></li>
                   </ul>
                 </div>
               </nav>
@@ -459,11 +459,11 @@
                       <li><a href="/">HOME</a></li>
                       <li><a href="{% url 'about' %}">ABOUT US</a></li>
                       <li><a href="{% url 'faq' %}">FAQ</a></li>
-                      <li><a href="?a=news">NEWS</a></li>
+                      <li><a href="{% url 'news' %}">NEWS</a></li>
                       <!--	<li><a href="?a=paidout">PAID OUT</a></li>
                   <li><a href="?a=banners">BANNERS</a></li>-->
-                      <li><a href="?a=login">LOGIN</a></li>
-                      <li><a href="?a=signup">SIGN UP</a></li>
+                      <li><a href="{% url 'login' %}">LOGIN</a></li>
+                      <li><a href="{% url 'register' %}">SIGN UP</a></li>
                     </ul>
                   </div>
                   <div class="column col-lg-6 col-md-6 col-sm-12">

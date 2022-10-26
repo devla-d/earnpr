@@ -1,0 +1,97 @@
+{% extends "layouts/home.html" %}<!---->
+{% block title %} My account {% endblock title %}<!---->
+{% block content %}
+
+<!-- Page Title -->
+<section
+  class="page-title"
+  style="background-image: url(/assets/home/images/background/3.jpg)"
+>
+  <div class="auto-container">
+    <h1>ACCOUNT DASHBOARD</h1>
+    <ul class="page-breadcrumb">
+      <li><a href="?a=home">home</a></li>
+    </ul>
+  </div>
+</section>
+<!-- End Page Title -->
+
+<!-- Sidebar Page Container -->
+<div class="sidebar-page-container">
+  <div class="auto-container">
+    <div class="row clearfix">
+      <!-- Sidebar Side -->
+      {% include "components/dashboardsidebar.html" %}
+
+      <!-- Content Side -->
+      <div class="content-side col-lg-9 col-md-12 col-sm-12">
+        <!-- News Detail -->
+        <div class="news-detail">
+          <div class="blog-author-box">
+            <h3>My Account</h3>
+            <br />
+            <div class="styled-form">
+              <div class="row">
+                <div class="col-sm blog-author-box">
+                  <form action="">
+                    <div class="row">
+                      <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                        <input
+                          type="text"
+                          name="fullname"
+                          value=""
+                          class="inpts"
+                          size="30"
+                          placeholder="Your Full Name"
+                        />
+                      </div>
+                      <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                        <input
+                          type="text"
+                          name="username"
+                          value=""
+                          class="inpts"
+                          size="30"
+                          placeholder="Your Username"
+                          disabled
+                        />
+                      </div>
+                      <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                        <input
+                          type="text"
+                          name="email"
+                          value=""
+                          class="inpts"
+                          size="30"
+                          placeholder="Your E-mail Address"
+                        />
+                      </div>
+                      <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                        <input
+                          type="text"
+                          name="email1"
+                          value=""
+                          class="inpts"
+                          size="30"
+                          placeholder="Retype Your E-mail"
+                        />
+                      </div>
+                    </div>
+
+                    <div class="form-group text-center">
+                      <button type="submit" class="theme-btn btn-style-two">
+                        <span class="txt">submit</span>
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}

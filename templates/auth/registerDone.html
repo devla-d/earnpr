@@ -1,0 +1,45 @@
+{% extends "layouts/home.html" %}<!---->
+{% block title %} Your {{domain}} account have been created {% endblock title %}<!----->
+{% block content %}
+
+<!-- Page Title -->
+<section
+  class="page-title"
+  style="background-image: url(/assets/home/images/background/3.jpg)"
+>
+  <div class="auto-container">
+    <h1>Registration completed</h1>
+    <ul class="page-breadcrumb">
+      <li><a href="/">home</a></li>
+
+      <li>Registration completed</li>
+    </ul>
+  </div>
+</section>
+<!-- End Page Title -->
+<section class="about-section">
+  <div
+    class="pattern-layer"
+    style="background-image: url(/assets/home/images/background/pattern-1.png)"
+  ></div>
+  <div class="auto-container">
+    <center>
+      <h3>Registration completed</h3>
+      <br />
+
+      Thank you for joining our program.<br />
+      You are now an official member of this program. You can login to your
+      account<br />
+      to start investing with us and use all the services that are available for
+      our members.
+      <br />
+      <br />
+
+      <b>Important:</b> Do not provide your login and password to anyone!
+      <br />
+
+      <a href="{% url 'login' %}">Log in to your account</a>
+    </center>
+  </div>
+</section>
+{% endblock content %}
