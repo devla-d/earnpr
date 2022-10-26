@@ -1,6 +1,13 @@
 {% extends "layouts/home.html" %}<!---->
 {% block title %} Create a {{domain}} account {% endblock title %}<!----->
-{% block content %}
+{% block style %}
+<style>
+  .invalid {
+    color: red !important;
+    text-align: left !important;
+  }
+</style>
+{% endblock style %} {% block content %}
 
 <!-- Page Title -->
 <section
@@ -30,130 +37,66 @@
       <!-- Login Form -->
       <div class="styled-form style-two">
         <form method="post" name="regform">
-          <input type="hidden" name="form_id" value="16667124912703" />
+          {% csrf_token %}
 
           <table cellspacing="0" cellpadding="2" border="0">
             <center>
               <div class="col">
                 <div class="title-box">
                   <div class="title">
-                    <h2>Personal <span>Data</span></h2>
+                    <!-- <h2>Personal <span>Data</span></h2> -->
                   </div>
                 </div>
               </div>
               <div class="row">
                 <div class="form-group col-lg-6 col-md-6 col-sm-12">
-                  <input
-                    type="text"
-                    name="fullname"
-                    value=""
-                    class="inpts"
-                    size="30"
-                    placeholder="Your Full Name"
-                  />
-                </div>
-                <div class="form-group col-lg-6 col-md-6 col-sm-12">
-                  <input
-                    type="text"
-                    name="username"
-                    value=""
-                    class="inpts size=30"
-                    placeholder="Your Username"
-                  />
-                </div>
-                <div class="form-group col-lg-6 col-md-6 col-sm-12">
-                  <input
-                    type="text"
-                    name="email"
-                    value=""
-                    class="inpts size=30"
-                    placeholder="Your E-mail Address"
-                  />
-                </div>
-                <div class="form-group col-lg-6 col-md-6 col-sm-12">
-                  <input
-                    type="text"
-                    name="email1"
-                    value=""
-                    class="inpts size=30"
-                    placeholder="Retype Your E-mail"
-                  />
-                </div>
-                <div class="col">
-                  <div class="title-box">
-                    <div class="title">
-                      <h2>Security <span>Data</span></h2>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="form-group col-lg-6 col-md-6 col-sm-12">
-                    <input
-                      type="password"
-                      name="password"
-                      value=""
-                      class="inpts size=30"
-                      placeholder="Define Password"
-                    />
-                  </div>
-                  <div class="form-group col-lg-6 col-md-6 col-sm-12">
-                    <input
-                      type="password"
-                      name="password2"
-                      value=""
-                      class="inpts size=30"
-                      placeholder="Retype Password"
-                    />
-                  </div>
-                  <div class="form-group col-lg-6 col-md-6 col-sm-12">
-                    <input
-                      type="text"
-                      name="sq"
-                      value=""
-                      class="inpts size=30"
-                      placeholder="Secret question"
-                    />
-                  </div>
-                  <div class="form-group col-lg-6 col-md-6 col-sm-12">
-                    <input
-                      type="text"
-                      name="sa"
-                      value=""
-                      class="inpts size=30"
-                      placeholder="Secret answer"
-                    />
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="title-box">
-                    <div class="title">
-                      <h2>Payment <span>Data</span></h2>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="form-group col-lg-6 col-md-6 col-sm-12">
-                    <input
-                      type="text"
-                      class="inpts size=30"
-                      name="pay_account[1000][wallet address]"
-                      value=""
-                      placeholder="Your Bitcoin wallet address"
-                    />
-                  </div>
-                  <div class="form-group col-lg-6 col-md-6 col-sm-12">
-                    <input
-                      type="text"
-                      class="inpts size=30"
-                      name="pay_account[1006][wallet address]"
-                      value=""
-                      placeholder="Your Tether TRC20 wallet address"
-                    />
-                  </div>
+                  {{form.fullname}} {% if form.fullname.errors %}<!---->
+                  {% for error in form.fullname.errors %}
 
-                  <div class="form-group col-lg-12 col-md-12 col-sm-12">
-                    <p>Your Upline: N/A (n/a)</p>
+                  <p class="invalid">{{error}}</p>
+                  {% endfor %} {% endif %}
+                </div>
+                <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                  {{form.email}} {% if form.email.errors %}<!---->
+                  {% for error in form.email.errors %}
+
+                  <p class="invalid">{{error}}</p>
+                  {% endfor %} {% endif %}
+                </div>
+                <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                  {{form.username}} {% if form.username.errors %}<!---->
+                  {% for error in form.username.errors %}
+
+                  <p class="invalid">{{error}}</p>
+                  {% endfor %} {% endif %}
+                </div>
+                <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                  <div class="row">
+                    <div class="form-group col-lg-4 col-md-4">
+                      {{form.referal_code.label}}
+                    </div>
+                    <div class="form-group col-lg-8 col-md-8">
+                      {{form.referal_code}} {% if form.referal_code.errors %}<!---->
+                      {% for error in form.referal_code.errors %}
+
+                      <p class="invalid">{{error}}</p>
+                      {% endfor %} {% endif %}
+                    </div>
                   </div>
+                </div>
+                <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                  {{form.password1}} {% if form.password1.errors %}<!---->
+                  {% for error in form.password1.errors %}
+
+                  <p class="invalid">{{error}}</p>
+                  {% endfor %} {% endif %}
+                </div>
+                <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                  {{form.password2}} {% if form.password2.errors %}<!---->
+                  {% for error in form.password2.errors %}
+
+                  <p class="invalid">{{error}}</p>
+                  {% endfor %} {% endif %}
                 </div>
               </div>
             </center>
@@ -164,11 +107,12 @@
                 name="agree"
                 value="1"
                 style="all: revert"
+                required
               />
-              I agree with <a href="?a=rules">Terms and conditions</a><br />
+              I agree with <a href="#">Terms and conditions</a><br />
               <button
                 type="submit"
-                class="theme-btn btn-style-three"
+                class="theme-btn btn-style-three mt-3"
                 value="Register"
               >
                 <span class="txt">Sign Up</span>

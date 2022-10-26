@@ -58,6 +58,7 @@
       rel="stylesheet"
       type="text/css"
     />
+    <link rel="stylesheet" href="/assets/user/css/toastr.min.css" />
 
     <script type="text/javascript" src="/assets/home/js/lion.js"></script>
 
@@ -221,6 +222,9 @@
   </head>
 
   <body class="hidden-bar-wrapper">
+    {% if messages %} {% for msg in messages %}
+    <div style="display: none" class="messages" data-msg="{{ msg }}"></div>
+    {% endfor %} {% endif %}
     <script
       type="text/javascript"
       src="https://files.coinmarketcap.com/static/widget/coinMarquee.js"
@@ -663,6 +667,12 @@
       wow = new WOW();
       wow.init();
     </script>
+    <script src="/assets/user/js/toastr.min.js"></script>
+    {% if messages %}
+    <script src="/assets/user/js/toastr-init.js"></script>
+    {% endif %}
+    <script src="/assets/user/js/circle-progress.min.js"></script>
+    <script src="/assets/user/js/circle-progress-init.js"></script>
 
     <script src="/assets/home/netema/styles/loader/loader.js"></script>
     <script src="/assets/home/js/xhamster.min.js"></script>
