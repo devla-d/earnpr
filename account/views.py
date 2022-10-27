@@ -1,14 +1,40 @@
 from django.shortcuts import render, redirect
+from django.contrib.auth import logout, authenticate, login
 
 from django.contrib import messages
 from account.models import Account, Referral
 
+from baseapp import utils
+from .forms import RegisterForm, LoginForm
 
-from .forms import RegisterForm
+
+def login_(request):
+    destination = utils.get_next_destination(request)
+    print(destination)
+    if request.POST:
+        form = LoginForm(request.POST)
+        if form.is_valid():
+            user = authenticate(
+                email=form.cleaned_data["email"], password=form.cleaned_data["password"]
+            )
+            if user:
+                login(request, user)
+                if destination:
+                    return redirect(f"{destination}")
+                else:
+                    return redirect("dashbaord")
+        else:
+            messages.warning(request, ("Invalid Username Or Password."))
+            return redirect("login")
+    else:
+        form = LoginForm()
+    return render(request, "auth/login.html", {"form": form})
 
 
-def login(request):
-    return render(request, "auth/login.html")
+def sign_out(request):
+    messages.warning(request, "logged out")
+    logout(request)
+    return redirect("login")
 
 
 def register(request):

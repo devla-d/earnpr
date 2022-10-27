@@ -1,6 +1,12 @@
-from ipaddress import ip_address
+from email.policy import default
+from django.utils.crypto import get_random_string
 from django.db import models
 from django.contrib.auth.models import AbstractUser
+
+
+def genarateRefId():
+    uniqueId = get_random_string(6, "abcdef0123456789").upper()
+    return uniqueId
 
 
 class Account(AbstractUser):
@@ -25,7 +31,7 @@ class Account(AbstractUser):
     referral_bonus = models.IntegerField(default=0, blank=True, null=True)
     referral = models.IntegerField(default=0, blank=True, null=True)
 
-    unique_id = models.CharField(max_length=30, blank=True, null=True, unique=True)
+    unique_id = models.CharField(max_length=30, unique=True, default=genarateRefId())
 
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = ["username"]

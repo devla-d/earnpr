@@ -96,7 +96,7 @@ class RegisterForm(UserCreationForm):
     def clean_referal_code(self):
         refcode = self.cleaned_data["referal_code"]
         if refcode:
-            if not Account.objects.filter(username__exact=refcode).exists():
+            if not Account.objects.filter(unique_id__exact=refcode).exists():
                 raise forms.ValidationError("Referal code is invalid")
         return refcode
 

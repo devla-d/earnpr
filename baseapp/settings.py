@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "crispy_forms",
     "account",
     "user",
     "superuser",
@@ -133,6 +134,11 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, "assets"),)
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+LOGIN_URL = "login"
+LOGIN_REDIRECT_URL = "dashbaord"
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+CRISPY_TEMPLATE_PACK = "bootstrap4"
 
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 # EMAIL_BACKEND = env("EMAIL_BACKEND")

@@ -328,8 +328,14 @@
 								<li><a href="?a=paidout">PAIDOUT</a>
 								</li>-->
                     <li><a href="{% url 'support' %}">SUPPORT</a></li>
+                    {% if user.is_authenticated %}
+                    <li><a href="{% url 'dashbaord' %}">Dashboard</a></li>
+                    <li><a href="{% url 'logout' %}">Logout</a></li>
+
+                    {% else %}
                     <li><a href="{% url 'login' %}">LOGIN</a></li>
                     <li><a href="{% url 'register' %}">SIGN UP</a></li>
+                    {% endif %}
                   </ul>
                 </div>
               </nav>

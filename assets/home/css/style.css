@@ -10362,7 +10362,7 @@ img{
 	position:absolute;
 	content:'';
 	left:0px;
-	top:12px;
+	top: 16px;
 	width:25px;
 	height:2px;
 	background-color:#ff4a17;
@@ -16407,3 +16407,106 @@ img{
 .select-language {
 margin: 0 0 0 220px;
 }}
+
+
+.user-statistic {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-align-items: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    margin: 0 -4px;
+    padding-bottom: 10px;
+  }
+
+  .user-statistic__item {
+    padding: 0 4px;
+    margin-bottom: 4px;
+    width: 25%;
+  }
+
+  .user-statistic__card {
+    width: 100%;
+    height: 100%;
+    min-height: 170px;
+    border: 1px solid #da5344;
+    text-align: center;
+    padding: 20px 10px 15px;
+  }
+
+  .user-statistic__icon {
+    display: block;
+    width: 100%;
+    height: 43px;
+    margin-bottom: 10px;
+    position: relative;
+  }
+
+  .user-statistic__icon:before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    bottom: 0;
+  }
+
+  .user-statistic__icon.st1--icon:before {
+    background-image: url(/assets/user/images/sprite.png);
+    background-position: 0px -260px;
+    width: 49px;
+    height: 43px;
+  }
+
+  .user-statistic__icon.st2--icon:before {
+    background-image: url(/assets/user/images/sprite.png);
+    background-position: -312px 0px;
+    width: 40px;
+    height: 41px;
+  }
+
+  .user-statistic__icon.st3--icon:before {
+    background-image: url(/assets/user/images/sprite.png);
+    background-position: -312px -46px;
+    width: 36px;
+    height: 40px;
+  }
+
+  .user-statistic__icon.st4--icon:before {
+    background-image: url(/assets/user/images/sprite.png);
+    background-position: -312px -91px;
+    width: 36px;
+    height: 39px;
+  }
+
+  .user-statistic__value {
+    font-family: "PFBeauSansPro-Black";
+    font-size: 2.75em;
+    line-height: 1;
+    color: #da5344;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+  }
+
+  .user-statistic__value span {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
+    display: inline-block;
+  }
+
+  .user-statistic__value span.small--letter {
+    font-size: 0.54545em;
+  }
+
+  .user-statistic__title {
+    font-size: 0.9375em;
+  }

@@ -1,6 +1,8 @@
 {% extends "layouts/home.html" %}<!---->
 {% block title %} Your {{domain}} dashboard {% endblock title %}<!---->
-{% block content %}
+{% block style %}
+<style></style>
+{% endblock style %} {% block content %}
 
 <!-- Page Title -->
 <section
@@ -29,50 +31,76 @@
         <div class="news-detail">
           <div class="blog-author-box">
             <div class="col blog-author-box">
-              <h3>Your account: Last Access -</h3>
+              <h3>
+                Last logged in -
+                <span class="text-danger h5">{{user.last_login}}</span>
+              </h3>
             </div>
 
-            <b><a href="?a=security"></a></b>
-
-            <div class="row">
-              <div class="col-sm blog-author-box" style="height: 150px">
-                <h3>Balance: $<b>1000.00</b></h3>
-                <br />
-                <p style="text-align: center"></p>
-              </div>
-
-              <div class="col-sm blog-author-box" style="height: 150px">
-                <h3>Earned Total: $<b>0.00</b></h3>
-              </div>
-
-              <div class="col-sm blog-author-box" style="height: 150px">
-                <h3>Active Deposit: $<b>0.00</b></h3>
+            <div class="rowy">
+              <div class="user-statistic">
+                <div class="user-statistic__item">
+                  <div class="user-statistic__card">
+                    <div class="user-statistic__icon st1--icon"></div>
+                    <div class="user-statistic__value">
+                      <span> $<b>{{user.balance}}</b> </span>
+                    </div>
+                    <div class="user-statistic__title">Total Balance</div>
+                  </div>
+                </div>
+                <div class="user-statistic__item">
+                  <div class="user-statistic__card">
+                    <div class="user-statistic__icon st2--icon"></div>
+                    <div class="user-statistic__value" id="load1">
+                      <span> $<b>{{user.deposit_balance}}</b> </span>
+                    </div>
+                    <div class="user-statistic__title">deposits Balance</div>
+                  </div>
+                </div>
+                <div class="user-statistic__item">
+                  <div class="user-statistic__card">
+                    <div class="user-statistic__icon st3--icon"></div>
+                    <div class="user-statistic__value" id="load2">
+                      <span> $<b>{{ earnings }}</b> </span>
+                    </div>
+                    <div class="user-statistic__title">Earnings</div>
+                  </div>
+                </div>
+                <div class="user-statistic__item">
+                  <div class="user-statistic__card">
+                    <div class="user-statistic__icon st4--icon"></div>
+                    <div class="user-statistic__value" id="load3">
+                      <span> $<b>{{user.total_withdraw}}</b> </span>
+                    </div>
+                    <div class="user-statistic__title">Total withdrawn</div>
+                  </div>
+                </div>
               </div>
             </div>
 
             <div class="row">
               <div class="col-sm blog-author-box">
-                <h3>User: <br />o0bumbum0o</h3>
+                <h3 class="text-truncate">
+                  User:
+                  <small class="h4 text-success">{{user.username}}</small>
+                </h3>
               </div>
               <div class="col-sm blog-author-box">
-                <h3>Registration Date: <br />Oct-25-2022</h3>
+                <h3>
+                  <span class=" ">Date joined:</span>
+                  <small class="h5 text-success"
+                    >{{user.date_joined|date:"M. d, Y"}}</small
+                  >
+                </h3>
               </div>
             </div>
 
             <div class="row">
               <div class="col-sm blog-author-box">
-                <h4 style="text-align: center">
-                  Referral Code: <span>o0bumbum0o</span>
-                </h4>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-sm blog-author-box">
-                <h3>Withdrew Total: <br />$<b>0.00</b></h3>
-              </div>
-              <div class="col-sm blog-author-box">
-                <h3>Pending Withdrawal: $<b>0.00</b></h3>
+                <h3 style="text-align: center">
+                  Referral Code:
+                  <span class="text-danger">{{user.unique_id}}</span>
+                </h3>
               </div>
             </div>
 

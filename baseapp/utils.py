@@ -1,3 +1,4 @@
+from http.client import HTTP_PORT
 from django.conf import settings
 from django.core.mail import EmailMessage
 from django.template.loader import get_template
@@ -17,6 +18,13 @@ PED = "PENDING"
 ACT = "ACTIVE"
 SUC = "SUCCESS"
 DEC = "DECLINED"
+
+
+def get_next_destination(request):
+    next = None
+    if request.GET.get("next"):
+        next = str(request.GET.get("next"))
+    return next
 
 
 def earnings(amount, perc):
