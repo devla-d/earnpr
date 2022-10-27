@@ -43,14 +43,14 @@ def register(request):
         if form.is_valid():
             instance = form.save()
             refcode = form.cleaned_data["referal_code"]
+            print("refcode is =", refcode)
             if refcode:
+
                 old_user = None
                 try:
-                    old_user = Account.objects.get(username__exact=refcode)
+                    old_user = Account.objects.get(unique_id__exact=refcode)
                 except Account.DoesNotExist:
                     old_user = None
-
-                print("old usere is", old_user.email, old_user.balance)
 
                 if old_user:
                     oldRef = Referral.objects.get(user=old_user)
