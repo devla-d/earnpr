@@ -3,6 +3,9 @@ from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 
 
+from .models import Transactions
+
+
 @login_required()
 def dashboard(request):
     return render(request, "users/index.html")
@@ -15,7 +18,9 @@ def history(request):
 
 @login_required()
 def withdraw(request):
-    return render(request, "users/withdraw.html")
+    user = request.user
+    transactions = Transactions.objects.filter(user=user).order_by("-date")
+    return render(request, "users/withdraw.html", {"transactions": transactions})
 
 
 @login_required()

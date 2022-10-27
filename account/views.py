@@ -10,7 +10,6 @@ from .forms import RegisterForm, LoginForm
 
 def login_(request):
     destination = utils.get_next_destination(request)
-    print(destination)
     if request.POST:
         form = LoginForm(request.POST)
         if form.is_valid():
@@ -43,7 +42,6 @@ def register(request):
         if form.is_valid():
             instance = form.save()
             refcode = form.cleaned_data["referal_code"]
-            print("refcode is =", refcode)
             if refcode:
 
                 old_user = None

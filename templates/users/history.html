@@ -10,7 +10,7 @@
   <div class="auto-container">
     <h1>ACCOUNT DASHBOARD</h1>
     <ul class="page-breadcrumb">
-      <li><a href="?a=home">home</a></li>
+      <li><a href="/">home</a></li>
     </ul>
   </div>
 </section>
@@ -44,9 +44,19 @@
                       <th class="inheader" width="200"><b>Amount</b></th>
                       <th class="inheader" width="170"><b>Date</b></th>
                     </tr>
+                    {% if transactions %} {% for tx in transactions %}
+                    <tr>
+                      <td>{{tx.trans_type}}</td>
+                      <td>${{tx.amount}}</td>
+                      <td>{{tx.date|date:"M. d, Y"}}</td>
+                    </tr>
+
+                    {% endfor %} {% else %}
                     <tr>
                       <td colspan="3" align="center">No transactions found</td>
                     </tr>
+
+                    {% endif %}
                     <tr>
                       <td colspan="3">&nbsp;</td>
                     </tr>
