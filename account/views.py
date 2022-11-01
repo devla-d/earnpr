@@ -1,6 +1,12 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import logout, authenticate, login
-
+from django.contrib.auth.tokens import default_token_generator
+from django.contrib.sites.shortcuts import get_current_site
+from django.utils.encoding import force_bytes
+from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
+from django.core.mail import EmailMessage
+from django.template.loader import get_template
+from django.utils.encoding import force_str
 from django.contrib import messages
 from account.models import Account, Referral
 
@@ -78,4 +84,35 @@ def registerDone(request):
 
 
 def changePassword(request):
+    if request.POST:
+        email = request.POST.get("email")
+        try:
+            user = Account.objects.get(email__exact=email)
+        except Account.DoesNotExist:
+            user = None
+
+        if user:
+            current_site = get_current_site(request)
+            subject = f"Reset password {current_site.domain}"
+            context = {
+                "user": user,
+                "domain": current_site.domain,
+                "uid": urlsafe_base64_encode(force_bytes(user.pk)),
+                "token": default_token_generator.make_token(user),
+            }
+            message = get_template("auth/resetPassword.html").render(context)
+            mail = EmailMessage(
+                subject=subject,
+                body=message,
+                from_email=utils.EMAIL_ADMIN,
+                to=[user.email],
+                reply_to=[utils.EMAIL_ADMIN],
+            )
+            mail.content_subtype = "html"
+            mail.send(fail_silently=True)
+            messages.info(request, "Check your mail box for instructions")
+            return redirect("forgot-password")
+        else:
+            messages.info(request, "A user with this email does not exist")
+            return redirect("forgot-password")
     return render(request, "auth/changePassword.html")
