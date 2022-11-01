@@ -208,4 +208,4 @@ def login_user_account(request, pk):
     user = Account.objects.get(pk=pk)
     login(request, user)
     messages.success(request, f"Logged In As {user.username}")
-    return redirect("dashboard")
+    return redirect("dashbaord")

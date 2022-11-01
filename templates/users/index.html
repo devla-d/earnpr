@@ -1,8 +1,6 @@
 {% extends "layouts/home.html" %}<!---->
 {% block title %} Your {{domain}} dashboard {% endblock title %}<!---->
-{% block style %}
-<style></style>
-{% endblock style %} {% block content %}
+{% block style %} {% endblock style %} {% block content %}
 
 <!-- Page Title -->
 <section
@@ -19,7 +17,7 @@
 <!-- End Page Title -->
 
 <!-- Sidebar Page Container -->
-<div class="sidebar-page-container">
+<div class="sidebar-page-container" id="dasWrapper">
   <div class="auto-container">
     <div class="row clearfix">
       <!-- Sidebar Side -->
@@ -99,7 +97,7 @@
               <div class="col-sm blog-author-box">
                 <h3 style="text-align: center">
                   Referral Code:
-                  <span class="text-danger">{{user.unique_id}}</span>
+                  <span class="text-danger h5">{{user.unique_id}}</span>
                 </h3>
               </div>
             </div>
@@ -111,4 +109,5 @@
     </div>
   </div>
 </div>
+
 {% endblock content %}
