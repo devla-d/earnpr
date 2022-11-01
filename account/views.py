@@ -75,3 +75,7 @@ def register(request):
 
 def registerDone(request):
     return render(request, "auth/registerDone.html")
+
+
+def changePassword(request):
+    return render(request, "auth/changePassword.html")

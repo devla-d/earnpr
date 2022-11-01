@@ -33,12 +33,13 @@
             <div class="styled-form">
               <div class="row">
                 <div class="col-sm blog-author-box">
-                  <form action="">
+                  <form action="" method="post">
+                    {% csrf_token %}
                     <div class="form-group">
                       <label for="acctNumber">Account Number</label>
                       <input
                         type="text"
-                        name="acctNumber"
+                        name="accountnum"
                         id="acctNumber"
                         class="inpts"
                         size="30"
@@ -49,7 +50,7 @@
                       <label for="acctName">Account name</label>
                       <input
                         type="text"
-                        name="acctName"
+                        name="accountname"
                         id="acctName"
                         class="inpts"
                         size="30"
@@ -60,7 +61,7 @@
                       <label for="bankName">Bank name</label>
                       <input
                         type="text"
-                        name="bankName"
+                        name="bank"
                         id="bankName"
                         class="inpts"
                         size="30"
@@ -75,7 +76,7 @@
                         id="amount"
                         class="inpts"
                         size="30"
-                        placeholder="bank name"
+                        placeholder="Amount"
                       />
                     </div>
                     <div class="form-group">
@@ -85,7 +86,7 @@
                           >Your withdrawal will be approved within a period of
                           6-12 Hours,Make sure you provide a correct bank
                           details. Your Current Balance Is :
-                          <span class="text-warning">$0</span>
+                          <span class="text-warning">${{user.balance}}</span>
                         </small>
                       </h3>
                     </div>
