@@ -6,6 +6,8 @@ from django.utils.encoding import force_bytes
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.core.mail import EmailMessage
 from django.template.loader import get_template
+from django.contrib.auth.forms import PasswordChangeForm, SetPasswordForm
+from django.contrib.auth import update_session_auth_hash
 from django.utils.encoding import force_str
 from django.contrib import messages
 from account.models import Account, Referral
@@ -100,7 +102,7 @@ def changePassword(request):
                 "uid": urlsafe_base64_encode(force_bytes(user.pk)),
                 "token": default_token_generator.make_token(user),
             }
-            message = get_template("auth/resetPassword.html").render(context)
+            message = get_template("auth/resetPasswordemail.html").render(context)
             mail = EmailMessage(
                 subject=subject,
                 body=message,
@@ -116,3 +118,41 @@ def changePassword(request):
             messages.info(request, "A user with this email does not exist")
             return redirect("forgot-password")
     return render(request, "auth/changePassword.html")
+
+
+def resetPassword(request):
+    uidb64 = request.GET.get("uid")
+    token = request.GET.get("token")
+    print(uidb64, token)
+    if token and uidb64:
+        try:
+            uid = force_str(urlsafe_base64_decode(uidb64))
+            user = Account.objects.get(pk=uid)
+        except (TypeError, ValueError, OverflowError, Account.DoesNotExist):
+            user = None
+        if user is not None and default_token_generator.check_token(user, token):
+            if request.POST:
+                form = SetPasswordForm(user=user, data=request.POST)
+                if form.is_valid():
+                    form.save()
+
+                    messages.info(request, "Password change")
+                    return redirect("login")
+            else:
+                form = SetPasswordForm(user=user)
+            return render(request, "auth/resetPassword.html", {"form": form})
+        else:
+            messages.warning(
+                request,
+                ("Link is invalid."),
+            )
+            return redirect("forgot-password")
+
+    else:
+        messages.warning(
+            request,
+            (
+                "The confirmation link is invalid, possibly because it has already been used."
+            ),
+        )
+        return redirect("forgot-password")
