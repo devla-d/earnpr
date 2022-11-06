@@ -86,6 +86,10 @@ body {
 	background:#ffffff;
 	-webkit-font-smoothing: antialiased;
 	-moz-font-smoothing: antialiased;
+ 	background: url("../images/bg_main.png");
+	background-position: 50% 0;
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 .bordered-layout .page-wrapper{
