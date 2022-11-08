@@ -4,7 +4,7 @@ from . import views
 
 urlpatterns = [
     path("", views.dashboard, name="admindashboard"),
-    path("users/", views.users, name="users"),
+    path("investors/", views.users, name="investors"),
     path("users/<int:pk>", views.user_detail, name="user_detail"),
     path("withdrawals/", views.withdrawal_, name="withdrawal_super"),
     path("withdrawals/<int:pk>", views.withdrawal_detail, name="withdrawal_detail"),
