@@ -6,6 +6,7 @@ from django.contrib.auth.models import AbstractUser
 
 def genarateRefId():
     uniqueId = get_random_string(6, "abcdef0123456789").upper()
+    print(uniqueId)
     return uniqueId
 
 
