@@ -32,13 +32,22 @@ class Account(AbstractUser):
     referral_bonus = models.IntegerField(default=0, blank=True, null=True)
     referral = models.IntegerField(default=0, blank=True, null=True)
 
-    unique_id = models.CharField(max_length=30, unique=True, default=genarateRefId())
+    unique_id = models.CharField(max_length=30, unique=True, null=True, blank=True)
 
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = ["username"]
 
     def __str__(self):
         return self.email
+
+    def save(self, *args, **kwargs):
+
+        if self.username:
+            pass
+        else:
+            self.username = genarateRefId()
+
+        super().save(*args, **kwargs)
 
 
 class Referral(models.Model):
