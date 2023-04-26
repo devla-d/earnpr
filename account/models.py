@@ -42,10 +42,10 @@ class Account(AbstractUser):
 
     def save(self, *args, **kwargs):
 
-        if self.username:
+        if self.unique_id:
             pass
         else:
-            self.username = genarateRefId()
+            self.unique_id = genarateRefId()
 
         super().save(*args, **kwargs)
 
