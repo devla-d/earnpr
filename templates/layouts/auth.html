@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <title>{% block title %} {% endblock title %}</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- Stylesheets -->
+    <link href="/assets/home/css/bootstrap.css" rel="stylesheet" />
+    <link href="/assets/home/css/style.css" rel="stylesheet" />
+
+    <link href="/assets/home/css/responsive.css" rel="stylesheet" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;500;700;900&amp;family=Open+Sans:wght@300;400;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="shortcut icon"
+      href="/assets/home/images/favicon.png"
+      type="image/x-icon"
+    />
+    <link
+      rel="icon"
+      href="/assets/home/images/favicon.png"
+      type="image/x-icon"
+    />
+    <meta name="author" content="hyiptemplates.xyz" />
+
+    <!-- Responsive -->
+    <!-- <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=1336" /> -->
+    <meta
+      property="og:description"
+      content="{{domain}} is an access to high-growth investment opportunities in Real Estate, Bitcoin markets and other services."
+    />
+    <meta
+      name="keywords"
+      content="{{domain}} ,HCI, {{domain}} Investments Real Estate, Crude oil, forex trade,binary oprions, bitcoin, blockchain, bitfury, bitfury.com, crypto currency, trade bitcoin, btc,crypto,currency,bitcoin,currency investment, online trading, Wealth Creation, Financial Freedon, Making Money"
+    />
+    <meta
+      name="description"
+      content="{{domain}} is an access to high-growth investment opportunities in Real Estate, Bitcoin markets and other services."
+    />
+
+    <!-- MY CSS -->
+    <link rel="stylesheet" href="/assets/home/css/rotate.css" />
+    <link rel="stylesheet" href="/assets/home/css/loading-area.css" />
+    <link rel="stylesheet" href="/assets/home/css/tv_container.css" />
+    <link rel="stylesheet" href="/assets/home/css/float.css" />
+
+    <link rel="stylesheet" href="/assets/home/css/yatranslate.css" />
+
+    <link
+      href="/assets/home/netema/styles/loader/loader.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="/assets/user/css/toastr.min.css" />
+
+    <script type="text/javascript" src="/assets/home/js/lion.js"></script>
+
+    <script>
+      setInterval(() => {
+        // investment
+        let items = document.querySelectorAll(".liondepositsamt");
+        items.forEach(function (item) {
+          function getRandomInt(min, max) {
+            min = Math.ceil(20);
+            max = Math.floor(2000);
+            fillNum = Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
+          }
+          getRandomInt();
+          item.innerHTML = "$" + fillNum;
+        });
+
+        // random investors
+        let investors = document.querySelectorAll(".lioninvestors");
+        investors.forEach(function (investor) {
+          function getRandomInvestors(min, max) {
+            min = Math.ceil(0);
+            max = Math.floor(3898);
+            invNumber = Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
+          }
+          getRandomInvestors();
+          investor.innerHTML = dummies[invNumber];
+        });
+
+        // withdrawal
+        let items1 = document.querySelectorAll(".lioncashoutamt");
+        items1.forEach(function (item1) {
+          function randomWithdraw(min, max) {
+            min = Math.ceil(100);
+            max = Math.floor(5500);
+            fillWithdraw = Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
+          }
+
+          randomWithdraw();
+          item1.innerHTML = "$" + fillWithdraw;
+          // console.log(item)
+        });
+        // random cash out
+        let cashOuts = document.querySelectorAll(".lioninvestors");
+        cashOuts.forEach(function (cashOut) {
+          function getRandomInvestors(min, max) {
+            min = Math.ceil(0);
+            max = Math.floor(3898);
+            cashNumber = Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
+          }
+          getRandomInvestors();
+          cashOut.innerHTML = dummies[cashNumber];
+        });
+
+        // console.log(item)
+      }, 2000);
+    </script>
+
+    <style>
+      /* Popup container - can be anything you want */
+      .popup {
+        display: none;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        background-color: #000;
+        position: fixed;
+        text-align: center;
+        color: #fff;
+        padding: 10px;
+        border-radius: 6px;
+        top: 20%;
+        z-index: 100;
+        font-weight: bolder;
+      }
+
+      /* The actual popup */
+      .popup .popuptext {
+        visibility: hidden;
+        width: 160px;
+        background-color: #555;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 8px 0;
+        position: absolute;
+        z-index: 1;
+        bottom: 125%;
+        left: 50%;
+        margin-left: -80px;
+      }
+
+      /* Popup arrow */
+      .popup .popuptext::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: #555 transparent transparent transparent;
+      }
+
+      /* Toggle this class - hide and show the popup */
+      .popup .show {
+        visibility: visible;
+        -webkit-animation: fadeIn 1s;
+        animation: fadeIn 1s;
+      }
+    </style>
+    <style>
+      .sticky-container {
+        padding: 0px;
+        margin: 0px;
+        position: fixed;
+        right: -170px;
+        top: 313px;
+        width: 210px;
+        z-index: 1100;
+      }
+      .sticky li {
+        list-style-type: none;
+        background-color: #fff;
+        color: #efefef;
+        height: 43px;
+        padding: 0px;
+        margin: 0px 0px 1px 0px;
+        -webkit-transition: all 0.25s ease-in-out;
+        -moz-transition: all 0.25s ease-in-out;
+        -o-transition: all 0.25s ease-in-out;
+        transition: all 0.25s ease-in-out;
+        cursor: pointer;
+      }
+      .sticky li:hover {
+        margin-left: -115px;
+      }
+      .sticky li img {
+        float: left;
+        margin: 5px 4px;
+        margin-right: 5px;
+      }
+      .sticky li p {
+        padding-top: 5px;
+        margin: 0px;
+        line-height: 16px;
+        font-size: 11px;
+      }
+      .sticky li p a {
+        text-decoration: none;
+        color: #2c3539;
+      }
+      .sticky li p a:hover {
+        text-decoration: underline;
+      }
+    </style>
+
+    {% block style %} {% endblock style %}
+  </head>
+
+  <body class="hidden-bar-wrapper">
+    {% if messages %} {% for msg in messages %}
+    <div style="display: none" class="messages" data-msg="{{ msg }}"></div>
+    {% endfor %} {% endif %}
+
+    <div class="page-wrapper">{% block content %} {% endblock content %}</div>
+
+    <!--End pagewrapper-->
+
+    <!--Scroll to top-->
+    <!--<div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-arrow-up"></span></div>-->
+
+    <div class="sticky-container">
+      <ul class="sticky">
+        <!--  <li>
+          <img src="/assets/home/images/facebook-circle.png" width="32" height="32">
+          <p><a href="https://www.facebook.com/HyipTemplates.XYZ" target="_blank">Like Us on<br>Facebook</a></p>
+      </li>
+      <li>
+          <img src="/assets/home/images/whatsapp.png" width="32" height="32">
+          <p><a href="https://wa.me/" target="_blank">Chat Us on<br>WhatsApp</a></p>
+      </li>-->
+        <li>
+          <img
+            src="/assets/home/images/telegram-circle.png"
+            width="32"
+            height="32"
+          />
+          <p>
+            <a href="https://t.me/" target="_blank">Find Us on<br />Telegram</a>
+          </p>
+        </li>
+      </ul>
+    </div>
+
+    <div class="popup">
+      <i class="fa fa-check-circle" id="pop-check"></i>
+      <span id="full-name"></span> from <span id="country-name"></span> just
+      <span id="payment-action"></span>
+      <span id="deposited-withdrew"></span> <span id="full-amount"></span>
+    </div>
+
+    <div class="lang lang_fixed">
+      <div id="ytWidget" style="display: none"></div>
+      <div class="lang__link lang__link_select" data-lang-active>
+        <img
+          class="lang__img lang__img_select"
+          src="/assets/home/images/lang/lang__ru.png"
+          alt="Ru"
+        />
+      </div>
+      <div class="lang__list" data-lang-list>
+        <a class="lang__link lang__link_sub" data-ya-lang="ru">
+          <img
+            class="lang__img"
+            src="/assets/home/images/lang/lang__ru.png"
+            alt="ru"
+          />
+        </a>
+        <a class="lang__link lang__link_sub" data-ya-lang="en">
+          <img
+            class="lang__img"
+            src="/assets/home/images/lang/lang__en.png"
+            alt="en"
+          />
+        </a>
+        <a class="lang__link lang__link_sub" data-ya-lang="de">
+          <img
+            class="lang__img"
+            src="/assets/home/images/lang/lang__de.png"
+            alt="de"
+          />
+        </a>
+        <a class="lang__link lang__link_sub" data-ya-lang="zh">
+          <img
+            class="lang__img"
+            src="/assets/home/images/lang/lang__zh.png"
+            alt="zh"
+          />
+        </a>
+        <a class="lang__link lang__link_sub" data-ya-lang="fr">
+          <img
+            class="lang__img"
+            src="/assets/home/images/lang/lang__fr.png"
+            alt="fr"
+          />
+        </a>
+        <a class="lang__link lang__link_sub" data-ya-lang="all">
+          <img
+            class="lang__img"
+            src="/assets/home/images/lang/lang__all.png"
+            alt="fr"
+          />
+        </a>
+      </div>
+    </div>
+
+    <script src="/assets/home/js/jquery.js"></script>
+    <script src="/assets/home/js/popper.min.js"></script>
+    <script src="/assets/home/js/bootstrap.min.js"></script>
+    <script src="/assets/home/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="/assets/home/js/jquery.fancybox.js"></script>
+    <script src="/assets/home/js/appear.js"></script>
+    <script src="/assets/home/js/parallax.min.js"></script>
+    <script src="/assets/home/js/tilt.jquery.min.js"></script>
+    <script src="/assets/home/js/jquery.paroller.min.js"></script>
+    <script src="/assets/home/js/owl.js"></script>
+    <script src="/assets/home/js/wow.js"></script>
+    <script src="/assets/home/js/nav-tool.js"></script>
+    <script src="/assets/home/js/jquery-ui.js"></script>
+    <script src="/assets/home/js/script.js"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/home/css/note.css" />
+    <script src="/assets/home/js/note.js"></script>
+    <script
+      src="//code.tidio.co/0h0bomduootrcxolue1n1ieorlnpcpe2.js"
+      async
+    ></script>
+    <script>
+      wow = new WOW();
+      wow.init();
+    </script>
+    <script src="/assets/user/js/toastr.min.js"></script>
+    {% if messages %}
+    <script src="/assets/user/js/toastr-init.js"></script>
+    {% endif %}
+    <script src="/assets/user/js/circle-progress.min.js"></script>
+    <script src="/assets/user/js/circle-progress-init.js"></script>
+
+    <!-- <script src="/assets/home/netema/styles/loader/loader.js"></script>
+    <script src="/assets/home/js/xhamster.min.js"></script> -->
+    <!-- <script>
+      var initiatedPopup = false;
+      $(document).ready(function () {
+        setInterval(function () {
+          var firstName =
+            random_names[Math.floor(Math.random() * random_names.length)];
+
+          var lastName =
+            random_names[Math.floor(Math.random() * random_names.length)];
+          var lastNamePreserved = lastName;
+
+          var lastNameLength = lastName.length;
+          var isOddLength = lastNameLength % 2 != 0;
+          var maskNumber = false; //(Math.floor(Math.random() * 2));
+
+          if (!maskNumber) {
+          } else if (lastNameLength == 3) {
+            lastName = "**" + lastName.substr(-1);
+          } else if (lastNameLength == 4) {
+            lastName = "**" + lastName.substr(-2);
+          } else if (lastNameLength == 5) {
+            lastName = lastName[0] + "**" + lastName.substr(-2);
+          } else if (lastNameLength == 6) {
+            lastName = lastName.substr(0, 3) + "**" + lastName.substr(-2);
+          } else if (lastNameLength == 7) {
+            lastName = lastName.substr(0, 3) + "***" + lastName.substr(-2);
+          } else {
+            var firstNCharactersToShow = Math.floor(Math.random() * 4);
+
+            var nCharactersToHide = Math.floor(Math.random() * 4);
+
+            var remainingCharactersLength =
+              -1 *
+              (lastNameLength - (firstNCharactersToShow + nCharactersToHide));
+
+            astricks = "";
+
+            for (i = 0; i <= 3; i++) {
+              astricks += "*";
+            }
+
+            lastName =
+              lastName.substr(0, firstNCharactersToShow) +
+              astricks +
+              lastName.substr(remainingCharactersLength);
+          }
+
+          var amount1 = getRandomIntInclusive(120, 340).toLocaleString();
+          var amount2 = getRandomIntInclusive(340, 680).toLocaleString();
+          var amount3 = getRandomIntInclusive(400, 800).toLocaleString();
+          var amount4 = getRandomIntInclusive(500, 1000).toLocaleString();
+          var amount5 = getRandomIntInclusive(200, 400).toLocaleString();
+          var amount6 = getRandomIntInclusive(100, 200).toLocaleString();
+          var amount7 = getRandomIntInclusive(1000, 2000).toLocaleString();
+          var amount8 = getRandomIntInclusive(1000, 1500).toLocaleString();
+          var amount9 = getRandomIntInclusive(1500, 2000).toLocaleString();
+          var amount10 = getRandomIntInclusive(2000, 3000).toLocaleString();
+          var amount11 = getRandomIntInclusive(1500, 3000).toLocaleString();
+          var amount12 = getRandomIntInclusive(3500, 5000).toLocaleString();
+          var amount13 = getRandomIntInclusive(4000, 5500).toLocaleString();
+
+          var amount14 = getRandomIntInclusive(5500, 7000).toLocaleString();
+
+          var amount15 = getRandomIntInclusive(6500, 7000).toLocaleString();
+          var amount16 = getRandomIntInclusive(7500, 8000).toLocaleString();
+          var amount17 = getRandomIntInclusive(8500, 9000).toLocaleString();
+          var amount18 = getRandomIntInclusive(9000, 9500).toLocaleString();
+          var amount19 = getRandomIntInclusive(9500, 10000).toLocaleString();
+          var amount20 = getRandomIntInclusive(10000, 12000).toLocaleString();
+
+          var amounts = [
+            amount1,
+            amount2,
+            amount3,
+            amount4,
+            amount5,
+            amount6,
+            amount7,
+            amount8,
+            amount9,
+            amount10,
+            amount11,
+            amount12,
+            amount13,
+            amount14,
+            amount15,
+            amount16,
+            amount17,
+            amount18,
+            amount19,
+            amount20,
+          ];
+
+          var amount = amounts[Math.floor(Math.random() * amounts.length)];
+
+          var countries = [
+            {
+              country: "Afghanistan",
+            },
+            {
+              country: "Albania",
+            },
+            {
+              country: "Algeria",
+            },
+            {
+              country: "American Samoa",
+            },
+            {
+              country: "Andorra",
+            },
+            {
+              country: "Angola",
+            },
+            {
+              country: "Anguilla",
+            },
+
+            {
+              country: "Argentina",
+            },
+            {
+              country: "Armenia",
+            },
+            {
+              country: "Aruba",
+            },
+            {
+              country: "Australia",
+            },
+            {
+              country: "Austria",
+            },
+            {
+              country: "Azerbaijan",
+            },
+            {
+              country: "Bahamas",
+            },
+            {
+              country: "Bahrain",
+            },
+            {
+              country: "Bangladesh",
+            },
+            {
+              country: "Barbados",
+            },
+            {
+              country: "Belarus",
+            },
+            {
+              country: "Belgium",
+            },
+            {
+              country: "Belize",
+            },
+            {
+              country: "Benin",
+            },
+            {
+              country: "Bermuda",
+            },
+            {
+              country: "Bhutan",
+            },
+            {
+              country: "Bolivia",
+            },
+            {
+              country: "Botswana",
+            },
+            {
+              country: "Brazil",
+            },
+
+            {
+              country: "Brunei",
+            },
+            {
+              country: "Bulgaria",
+            },
+            {
+              country: "Burkina Faso",
+            },
+            {
+              country: "Burundi",
+            },
+            {
+              country: "Cambodia",
+            },
+            {
+              country: "Cameroon",
+            },
+            {
+              country: "Canada",
+            },
+            {
+              country: "Cape Verde",
+            },
+            {
+              country: "Cayman Islands",
+            },
+            {
+              country: "Chad",
+            },
+            {
+              country: "Chile",
+            },
+            {
+              country: "China",
+            },
+
+            {
+              country: "Colombia",
+            },
+            {
+              country: "Comoros",
+            },
+            {
+              country: "Congo",
+            },
+
+            {
+              country: "Cook Islands",
+            },
+            {
+              country: "Costa Rica",
+            },
+            {
+              country: "Ivory Coast",
+            },
+            {
+              country: "Croatia",
+            },
+            {
+              country: "Cuba",
+            },
+            {
+              country: "Cyprus",
+            },
+            {
+              country: "Czech Republic",
+            },
+            {
+              country: "Denmark",
+            },
+            {
+              country: "Djibouti",
+            },
+            {
+              country: "Dominica",
+            },
+            {
+              country: "East Timor",
+            },
+            {
+              country: "Ecuador",
+            },
+            {
+              country: "Egypt",
+            },
+            {
+              country: "England",
+            },
+            {
+              country: "El Salvador",
+            },
+
+            {
+              country: "Eritrea",
+            },
+            {
+              country: "Estonia",
+            },
+            {
+              country: "Ethiopia",
+            },
+            {
+              country: "Faroe Islands",
+            },
+            {
+              country: "Fiji Islands",
+            },
+            {
+              country: "Finland",
+            },
+            {
+              country: "France",
+            },
+            {
+              country: "French Guiana",
+            },
+
+            {
+              country: "Gabon",
+            },
+            {
+              country: "Gambia",
+            },
+            {
+              country: "Georgia",
+            },
+            {
+              country: "Germany",
+            },
+            {
+              country: "Ghana",
+            },
+            {
+              country: "Gibraltar",
+            },
+            {
+              country: "Greece",
+            },
+            {
+              country: "Greenland",
+            },
+            {
+              country: "Grenada",
+            },
+            {
+              country: "Guadeloupe",
+            },
+            {
+              country: "Guam",
+            },
+            {
+              country: "Guatemala",
+            },
+            {
+              country: "Guernsey",
+            },
+            {
+              country: "Guinea",
+            },
+
+            {
+              country: "Guyana",
+            },
+            {
+              country: "Haiti",
+            },
+
+            {
+              country: "Honduras",
+            },
+            {
+              country: "Hong Kong",
+            },
+            {
+              country: "Hungary",
+            },
+            {
+              country: "Iceland",
+            },
+            {
+              country: "India",
+            },
+            {
+              country: "Indonesia",
+            },
+            {
+              country: "Iran",
+            },
+            {
+              country: "Iraq",
+            },
+            {
+              country: "Ireland",
+            },
+            {
+              country: "Israel",
+            },
+            {
+              country: "Isle of Man",
+            },
+            {
+              country: "Italy",
+            },
+            {
+              country: "Jamaica",
+            },
+            {
+              country: "Japan",
+            },
+            {
+              country: "Jersey",
+            },
+            {
+              country: "Jordan",
+            },
+            {
+              country: "Kazakhstan",
+            },
+            {
+              country: "Kenya",
+            },
+            {
+              country: "Kiribati",
+            },
+            {
+              country: "Kuwait",
+            },
+            {
+              country: "Kyrgyzstan",
+            },
+            {
+              country: "Laos",
+            },
+            {
+              country: "Latvia",
+            },
+            {
+              country: "Lebanon",
+            },
+            {
+              country: "Lesotho",
+            },
+            {
+              country: "Liberia",
+            },
+            {
+              country: "Liechtenstein",
+            },
+            {
+              country: "Lithuania",
+            },
+            {
+              country: "Luxembourg",
+            },
+            {
+              country: "Macao",
+            },
+            {
+              country: "Madagascar",
+            },
+            {
+              country: "Malawi",
+            },
+            {
+              country: "Malaysia",
+            },
+            {
+              country: "Maldives",
+            },
+            {
+              country: "Mali",
+            },
+            {
+              country: "Malta",
+            },
+            {
+              country: "Martinique",
+            },
+            {
+              country: "Mauritania",
+            },
+            {
+              country: "Mauritius",
+            },
+            {
+              country: "Mayotte",
+            },
+            {
+              country: "Mexico",
+            },
+
+            {
+              country: "Moldova",
+            },
+            {
+              country: "Monaco",
+            },
+            {
+              country: "Mongolia",
+            },
+            {
+              country: "Montserrat",
+            },
+            {
+              country: "Montenegro",
+            },
+            {
+              country: "Morocco",
+            },
+            {
+              country: "Mozambique",
+            },
+            {
+              country: "Myanmar",
+            },
+            {
+              country: "Namibia",
+            },
+            {
+              country: "Nauru",
+            },
+            {
+              country: "Nepal",
+            },
+            {
+              country: "Netherlands",
+            },
+
+            {
+              country: "New Caledonia",
+            },
+            {
+              country: "New Zealand",
+            },
+            {
+              country: "Nicaragua",
+            },
+            {
+              country: "Niger",
+            },
+            {
+              country: "Nigeria",
+            },
+            {
+              country: "Niue",
+            },
+            {
+              country: "Norfolk Island",
+            },
+            {
+              country: "North Korea",
+            },
+            {
+              country: "Northern Ireland",
+            },
+
+            {
+              country: "Norway",
+            },
+            {
+              country: "Oman",
+            },
+            {
+              country: "Pakistan",
+            },
+            {
+              country: "Palau",
+            },
+            {
+              country: "Palestine",
+            },
+            {
+              country: "Panama",
+            },
+
+            {
+              country: "Paraguay",
+            },
+            {
+              country: "Peru",
+            },
+            {
+              country: "Philippines",
+            },
+            {
+              country: "Pitcairn",
+            },
+            {
+              country: "Poland",
+            },
+            {
+              country: "Portugal",
+            },
+            {
+              country: "Puerto Rico",
+            },
+            {
+              country: "Qatar",
+            },
+            {
+              country: "Reunion",
+            },
+            {
+              country: "Romania",
+            },
+
+            {
+              country: "Rwanda",
+            },
+            {
+              country: "Saint Helena",
+            },
+
+            {
+              country: "Saint Lucia",
+            },
+
+            {
+              country: "Samoa",
+            },
+            {
+              country: "San Marino",
+            },
+
+            {
+              country: "Saudi Arabia",
+            },
+            {
+              country: "Scotland",
+            },
+            {
+              country: "Senegal",
+            },
+            {
+              country: "Serbia",
+            },
+            {
+              country: "Seychelles",
+            },
+            {
+              country: "Sierra Leone",
+            },
+            {
+              country: "Singapore",
+            },
+            {
+              country: "Slovakia",
+            },
+            {
+              country: "Slovenia",
+            },
+            {
+              country: "Solomon Islands",
+            },
+            {
+              country: "Somalia",
+            },
+            {
+              country: "South Africa",
+            },
+
+            {
+              country: "South Korea",
+            },
+            {
+              country: "South Sudan",
+            },
+            {
+              country: "Spain",
+            },
+            {
+              country: "Sri Lanka",
+            },
+            {
+              country: "Sudan",
+            },
+            {
+              country: "Suriname",
+            },
+
+            {
+              country: "Swaziland",
+            },
+            {
+              country: "Sweden",
+            },
+            {
+              country: "Switzerland",
+            },
+            {
+              country: "Syria",
+            },
+            {
+              country: "Tajikistan",
+            },
+            {
+              country: "Tanzania",
+            },
+            {
+              country: "Thailand",
+            },
+
+            {
+              country: "Togo",
+            },
+
+            {
+              country: "Tonga",
+            },
+
+            {
+              country: "Tunisia",
+            },
+            {
+              country: "Turkey",
+            },
+
+            {
+              country: "Tuvalu",
+            },
+            {
+              country: "Uganda",
+            },
+            {
+              country: "Ukraine",
+            },
+
+            {
+              country: "United Kingdom",
+            },
+            {
+              country: "United States",
+            },
+
+            {
+              country: "Uruguay",
+            },
+            {
+              country: "Uzbekistan",
+            },
+            {
+              country: "Vanuatu",
+            },
+            {
+              country: "Venezuela",
+            },
+            {
+              country: "Vietnam",
+            },
+            {
+              country: "Wales",
+            },
+
+            {
+              country: "Yemen",
+            },
+            {
+              country: "Zambia",
+            },
+            {
+              country: "Zimbabwe",
+            },
+          ];
+
+          $("#full-amount").text(
+            "$" + amount + "." + Math.floor(Math.random() * 99).toString()
+          );
+          $("#country-name").text(
+            countries[Math.floor(Math.random() * countries.length - 1)].country
+          );
+          $("#full-name").text(firstName);
+          var paymentActions = ["Invested", "Withdrew"];
+
+          $("#payment-action").text(
+            paymentActions[Math.floor(Math.random() * paymentActions.length)]
+          );
+          initiatedPopup = true;
+        }, 5000);
+
+        setInterval(function () {
+          $(".popup").fadeToggle(5000);
+        }, 5000);
+      });
+    </script> -->
+    <!-- yatranslate -->
+    <script src="/assets/home/js/yatranslate.js"></script>
+
+    {% block scripts %} {% endblock scripts %}
+  </body>
+</html>
