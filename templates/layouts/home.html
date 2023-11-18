@@ -225,12 +225,45 @@
       .main-header .header-upper .logo-box {
         background-color: transparent;
       }
+
+      .memclose-btn {
+        display: none;
+      }
+
       @media (max-width: 767px) {
         .user-statistic {
           flex-direction: column;
         }
         .user-statistic__item {
           width: auto !important;
+        }
+        .sidebar-page-container .content-side,
+        .sidebar-page-container .sidebar-side {
+          margin-bottom: 15px;
+        }
+        .sidebar-widget .widget-content {
+          height: 73px;
+          overflow: hidden;
+          transition: height 1s ease-in-out;
+        }
+        .sidebar-widget .widget-content.active {
+          height: auto;
+        }
+        .sidebar-title {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+        .memclose-btn {
+          display: block;
+          margin: 0;
+          padding: 8px 0;
+          margin-left: 20px;
+
+          font-size: 30px;
+
+          cursor: pointer;
+          color: #000000;
         }
       }
     </style>
@@ -630,6 +663,7 @@
     {% endif %}
     <script src="/assets/user/js/circle-progress.min.js"></script>
     <script src="/assets/user/js/circle-progress-init.js"></script>
+    {% block script %} {% endblock script %}
 
     <script src="/assets/home/netema/styles/loader/loader.js"></script>
     <script src="/assets/home/js/xhamster.min.js"></script>

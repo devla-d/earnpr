@@ -4,9 +4,13 @@
 
     <!-- Categories Widget -->
     <div class="sidebar-widget categories-box">
-      <div class="widget-content">
+      <div id="memwidget-content" class="widget-content">
         <div class="sidebar-title">
           <h5>Member panel</h5>
+          <div class="memclose-btn">
+            <!-- <span class="icon flaticon-multiply"></span> -->
+            <span id="memtoggle" class="icon flaticon-menu"></span>
+          </div>
         </div>
         <ul class="category-list">
           <li><a href="{% url 'dashbaord' %}">Account</a></li>
@@ -22,3 +26,22 @@
     </div>
   </aside>
 </div>
+
+{% block script %}
+<script>
+  const toggleButton = document.getElementById("memtoggle");
+  const sidebar = document.getElementById("memwidget-content");
+
+  toggleButton.addEventListener("click", () => {
+    if (sidebar.classList.contains("active")) {
+      sidebar.classList.remove("active");
+      toggleButton.classList.remove("flaticon-multiply");
+      toggleButton.classList.add("flaticon-menu");
+    } else {
+      sidebar.classList.add("active");
+      toggleButton.classList.remove("flaticon-menu");
+      toggleButton.classList.add("flaticon-multiply");
+    }
+  });
+</script>
+{% endblock script %}
